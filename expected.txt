@@ -1,0 +1,40 @@
+apple, kid, detergent, bread, pear, water, orange, tree, beer, cat, cheese, milk
+apple
+beer, carrot, cat, apple, orange, horse, mouse
+horse, cat, milk, tree, water, umbrella, apple, bread, pear, carrot
+bread, cat, dog, carrot, cheese, kid
+detergent, carrot, cheese, bread, pear, beer, water, horse, dog, tree
+bread, kid, orange, cheese
+carrot, cat, milk, orange
+cheese, dog, cat, apple, beer, detergent, horse, mouse, bread, umbrella, carrot
+orange
+dog, diaper, water, umbrella, pear, mouse, tree, milk, kid, bread, carrot, cat
+detergent, cat, milk, beer, orange
+
+0.4 relative min support
+0.7 relative min confidence
+
+13 Large Itemsets (by Apriori):
+{apple} (support: 41.66666666666667%)
+{bread} (support: 58.333333333333336%)
+{orange} (support: 50%)
+{beer} (support: 41.66666666666667%)
+{cat} (support: 66.66666666666666%)
+{cheese} (support: 41.66666666666667%)
+{milk} (support: 41.66666666666667%)
+{carrot} (support: 58.333333333333336%)
+{bread, cat} (support: 41.66666666666667%)
+{bread, cheese} (support: 41.66666666666667%)
+{cat, milk} (support: 41.66666666666667%)
+{bread, carrot} (support: 41.66666666666667%)
+{cat, carrot} (support: 50%)
+
+8 Association Rules
+{bread} => {cat} (Support: 41.67%,  Confidence: 71.43%)
+{bread} => {cheese} (Support: 41.67%,  Confidence: 71.43%)
+{cheese} => {bread} (Support: 41.67%,  Confidence: 100.00%)
+{milk} => {cat} (Support: 41.67%,  Confidence: 100.00%)
+{bread} => {carrot} (Support: 41.67%,  Confidence: 71.43%)
+{carrot} => {bread} (Support: 41.67%,  Confidence: 71.43%)
+{cat} => {carrot} (Support: 50.00%,  Confidence: 75.00%)
+{carrot} => {cat} (Support: 50.00%,  Confidence: 85.71%)
