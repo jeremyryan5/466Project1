@@ -73,7 +73,7 @@ def print_results_min_sup(f, rel_min_sup):
 def apriory(dataBase, totalItemSet, rel_min_sup):
     size = len(dataBase)
     min_sup = rel_min_sup * size
-    frequentItemSet = set()
+    frequentItems = []
     prefixTree = [[], []]
     for i in totalItemSet:
         prefixTree[1].append(TreeNode(set([i]), 0))
@@ -82,13 +82,13 @@ def apriory(dataBase, totalItemSet, rel_min_sup):
         computeSupport(prefixTree[k], k, dataBase)
         for prefix_set_node in prefixTree[k][:]:
             if prefix_set_node.support >= min_sup:
-                frequentItemSet.add((', '.join(prefix_set_node.s), prefix_set_node.support))
+                frequentItems.append((', '.join(prefix_set_node.s), prefix_set_node.support))
             else:
                 prefixTree[k].remove(prefix_set_node)
         prefixTree.append([])
         prefixTree[k + 1] = extendPrefixTree(prefixTree[k])
         k += 1
-    print_results_min_sup(frequentItemSet, rel_min_sup)
+    print_results_min_sup(frequentItems, rel_min_sup)
 
 def main():
    args = sys.argv[1:]
