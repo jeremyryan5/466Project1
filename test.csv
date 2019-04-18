@@ -1,12 +1,12 @@
-1,red,sweet,fruit,9,true
-2,blue,sweet,fruit,8,true
-3,green,tart,fruit,8.5,false
-4,red,savory,meat,9,true
-5,orange,sweet,fruit,7,false
-6,white,sweet,dairy,8,true
-7,yellow,sweet,fruit,6,false
-8,brown,sweet,candy,9,false
-9,green,tart,vegetable,5,true
-10,green,bitter,vegetable,4,true
-11,orange,normal,vegetable,6,true
-12,white,crunchy,vegetable,6,true
+apple, kid, detergent, bread, pear, water, orange, tree, beer, cat, cheese, milk
+apple
+beer, carrot, cat, apple, orange, horse, mouse
+horse, cat, milk, tree, water, umbrella, apple, bread, pear, carrot
+bread, cat, dog, carrot, cheese, kid
+detergent, carrot, cheese, bread, pear, beer, water, horse, dog, tree
+bread, kid, orange, cheese
+carrot, cat, milk, orange
+cheese, dog, cat, apple, beer, detergent, horse, mouse, bread, umbrella, carrot
+orange
+dog, diaper, water, umbrella, pear, mouse, tree, milk, kid, bread, carrot, cat
+detergent, cat, milk, beer, orange
