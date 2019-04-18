@@ -54,8 +54,19 @@ def computeSupport(k_tree_level, k, dataBase):
                     prefix_set_node.support += 1
 
 # Extends the k-ith prefix tree level
-def extendPrefixTree(k_tree_level, k):
-    return None
+def extendPrefixTree(k_tree_level):
+    k_1 = []
+    for i in range(len(k_tree_level)):
+        for j in range(i + 1, len(k_tree_level)):
+            siblingUnion = k_tree_level[i].s.union(k_tree_level[j].s)
+            k_1.append(TreeNode(siblingUnion, 0))
+    return k_1
+
+# Prints the results of the array of tuples containing the frequent sets and their support
+def print_results_min_sup(f, rel_min_sup):
+    print "The most frequent item sets with relative minimum support of",rel_min_sup,"are as follows:"
+    for i in f:
+        print i[0],"with support of",i[1]
 
 # The apriory algorithm for minimum support
 def apriory(dataBase, totalItemSet, rel_min_sup):
@@ -74,8 +85,9 @@ def apriory(dataBase, totalItemSet, rel_min_sup):
             else:
                 prefixTree[k].remove(prefix_set_node)
         prefixTree.append([])
-        prefixTree[k + 1] = extendPrefixTree(prefixTree[k], k)
+        prefixTree[k + 1] = extendPrefixTree(prefixTree[k])
         k += 1
+    print_results_min_sup(frequentItemSet, rel_min_sup)
 
 def main():
    args = sys.argv[1:]
@@ -85,13 +97,12 @@ def main():
       sys.exit(1)
 
    csv_path = args[0]
+   rel_min_sup = float(args[1])
    csv = open(csv_path, 'r')
 
    transactionDatabase = buildTransactionDatabaseFromCSV(csv)
    totalItemSet = buildTotalItemSet(transactionDatabase)
-   apriory(transactionDatabase, totalItemSet, 0.25)
-#    print(len(transactionDatabase))
-#    apriory(csv, args[1])
+   apriory(transactionDatabase, totalItemSet, rel_min_sup)
 
 if __name__ == '__main__':
    main()
