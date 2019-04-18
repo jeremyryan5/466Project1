@@ -64,9 +64,10 @@ def extendPrefixTree(k_tree_level):
 
 # Prints the results of the array of tuples containing the frequent sets and their support
 def print_results_min_sup(f, rel_min_sup):
-    print "The most frequent item sets with relative minimum support of",rel_min_sup,"are as follows:"
+    print "The most frequent item sets with relative minimum support of",rel_min_sup,"are as follows:\n"
+    print '%-62s%-12s' % ("set:", "support:\n")
     for i in f:
-        print i[0],"with support of",i[1]
+        print '{%-62s%-12i' % (i[0] + '}', i[1])
 
 # The apriory algorithm for minimum support
 def apriory(dataBase, totalItemSet, rel_min_sup):
